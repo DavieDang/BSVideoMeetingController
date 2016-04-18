@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>BSVideoMeetingController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E2E8E9D51CC47EA300B81F7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2E8E9EE1CC47EA400B81F7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2E8E9F91CC47EA400B81F7C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
