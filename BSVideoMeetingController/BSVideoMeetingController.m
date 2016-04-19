@@ -13,10 +13,11 @@
 #import "VideoView.h"
 
 
+
 #define kWIDTH  [UIScreen mainScreen].bounds.size.width
 #define kHEIGHT  [UIScreen mainScreen].bounds.size.height
 
-@interface BSVideoMeetingController ()<UITableViewDelegate,UITableViewDataSource>
+@interface BSVideoMeetingController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (assign) BOOL isOpen;
 @property (nonatomic,strong) TimeView *timeView;
@@ -24,8 +25,16 @@
 @property (nonatomic,strong) VideoView *videoView;
 
 
+//延长会议的时间
+@property (nonatomic,strong) UIPickerView *pickerView;
+
+
 //测试成员是否加入视频会议
 @property (assign) BOOL isJoin;
+
+//延长的时间的数组
+
+@property (nonatomic,strong) NSMutableArray *timeArr;
  
 
 @end
@@ -40,9 +49,10 @@
         _timeView = [[TimeView alloc]initWithFrame:CGRectZero];
         [self.view addSubview:_timeView];
         self.timeView.backgroundColor = [UIColor whiteColor];
-        self.timeView.line1.backgroundColor = [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1.0];
-         self.timeView.line2.backgroundColor = [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1.0];
-         self.timeView.line3.backgroundColor = [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1.0];
+        [self.timeView.transferBtn addTarget:self action:@selector(transferEvent) forControlEvents:UIControlEventTouchUpInside];
+        [self.timeView.SilenceBtn addTarget:self action:@selector(silenceEvent) forControlEvents:UIControlEventTouchUpInside];;
+        [self.timeView.recordBtn addTarget:self action:@selector(recordEvent) forControlEvents:UIControlEventTouchUpInside];;
+        
         [self.timeView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.topMargin.mas_equalTo(64);
             make.left.right.mas_equalTo(0);
@@ -97,6 +107,45 @@
     }
     return _tableView;
 }
+
+
+
+- (UIPickerView *)pickerView{
+    if (!_pickerView) {
+        _pickerView = [UIPickerView new];
+        
+        _pickerView.backgroundColor = [UIColor whiteColor];
+         [_pickerView selectRow:3 inComponent:1 animated:YES];
+        _pickerView.delegate = self;
+        _pickerView.dataSource = self;
+        
+       
+        
+        [self.view addSubview:_pickerView];
+        [self.pickerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.right.bottom.mas_equalTo(0);
+            make.height.mas_equalTo(244);
+            
+        }];
+        
+    }
+    return _pickerView;
+}
+
+
+- (NSMutableArray *)timeArr{
+    if (!_timeArr) {
+        _timeArr = [NSMutableArray arrayWithCapacity:5];
+        [_timeArr addObject:@"5分钟"];
+        [_timeArr addObject:@"10分钟"];
+        [_timeArr addObject:@"30分钟"];
+        [_timeArr addObject:@"1小时"];
+        [_timeArr addObject:@"2小时"];
+    }
+    return _timeArr;
+}
+
 
 
 - (void)viewDidLoad {
@@ -266,7 +315,8 @@
 //延长会议
 - (void)extendMeet{
     
-    NSLog(@"延长会议.......");
+       self.pickerView.hidden = NO;
+    
 }
 
 //退出会议
@@ -275,6 +325,65 @@
     NSLog(@"退出会议.......");
     
 }
+
+
+//转移主持人
+- (void)transferEvent{
+    NSLog(@"转移主持人....");
+}
+
+
+//会议录音
+
+- (void)recordEvent{
+    
+    NSLog(@"会议录音....");
+}
+
+
+
+//全场静音
+
+- (void)silenceEvent{
+    
+    NSLog(@"全场静音.....");
+}
+
+
+
+
+#pragma mark-------UIPickerViewDataSource
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return self.timeArr.count;
+}
+
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    return self.timeArr[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSLog(@"你点击了%ld行",row);
+    
+    self.pickerView.hidden = YES;
+}
+
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    
+    return 48;
+}
+
+
+
 
 
 @end

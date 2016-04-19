@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0657621CB396375012AC0D41 /* libPods-BSVideoMeetingController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */; };
+		E2C82A181CC6390A00F598FA /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C82A171CC6390A00F598FA /* down.png */; };
+		E2C82A1A1CC63D6300F598FA /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C82A191CC63D6300F598FA /* up.png */; };
 		E2E8E9DB1CC47EA400B81F7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8E9DA1CC47EA400B81F7C /* main.m */; };
 		E2E8E9DE1CC47EA400B81F7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8E9DD1CC47EA400B81F7C /* AppDelegate.m */; };
 		E2E8E9E41CC47EA400B81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E8E9E21CC47EA400B81F7C /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		E2E8EA111CC4825800B81F7C /* MemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8EA101CC4825800B81F7C /* MemberCell.m */; };
 		E2E8EA141CC4D18C00B81F7C /* TimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8EA131CC4D18C00B81F7C /* TimeView.m */; };
 		E2E8EA171CC4E14500B81F7C /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8EA161CC4E14500B81F7C /* VideoView.m */; };
+		E2EE642F1CC5DD3B009267B5 /* BSMeetingInvikeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */; };
+		E2EE64301CC5DD3B009267B5 /* BSMeetingInvikeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,8 @@
 		73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSVideoMeetingController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C871C6F1C5E368D677110 /* Pods-BSVideoMeetingController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController.debug.xcconfig"; sourceTree = "<group>"; };
 		B5437B76AF5F8C2E0C81A829 /* Pods-BSVideoMeetingController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingController.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController.release.xcconfig"; sourceTree = "<group>"; };
+		E2C82A171CC6390A00F598FA /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		E2C82A191CC63D6300F598FA /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		E2E8E9D61CC47EA400B81F7C /* BSVideoMeetingController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSVideoMeetingController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E8E9DA1CC47EA400B81F7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2E8E9DC1CC47EA400B81F7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +70,9 @@
 		E2E8EA131CC4D18C00B81F7C /* TimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeView.m; sourceTree = "<group>"; };
 		E2E8EA151CC4E14500B81F7C /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
 		E2E8EA161CC4E14500B81F7C /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
+		E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMeetingInvikeController.h; sourceTree = "<group>"; };
+		E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMeetingInvikeController.m; sourceTree = "<group>"; };
+		E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMeetingInvikeController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +143,9 @@
 		E2E8E9D81CC47EA400B81F7C /* BSVideoMeetingController */ = {
 			isa = PBXGroup;
 			children = (
+				E2C82A191CC63D6300F598FA /* up.png */,
+				E2C82A171CC6390A00F598FA /* down.png */,
+				E2EE642B1CC5DCE6009267B5 /* 通知界面 */,
 				E2E8E9DC1CC47EA400B81F7C /* AppDelegate.h */,
 				E2E8E9DD1CC47EA400B81F7C /* AppDelegate.m */,
 				E2E8EA121CC4D18B00B81F7C /* TimeView.h */,
@@ -177,6 +189,16 @@
 				E2E8EA001CC47EA400B81F7C /* Info.plist */,
 			);
 			path = BSVideoMeetingControllerUITests;
+			sourceTree = "<group>";
+		};
+		E2EE642B1CC5DCE6009267B5 /* 通知界面 */ = {
+			isa = PBXGroup;
+			children = (
+				E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */,
+				E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */,
+				E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */,
+			);
+			path = "通知界面";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +307,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C82A1A1CC63D6300F598FA /* up.png in Resources */,
 				E2E8E9E91CC47EA400B81F7C /* LaunchScreen.storyboard in Resources */,
+				E2C82A181CC6390A00F598FA /* down.png in Resources */,
 				E2E8E9E61CC47EA400B81F7C /* Assets.xcassets in Resources */,
+				E2EE64301CC5DD3B009267B5 /* BSMeetingInvikeController.xib in Resources */,
 				E2E8E9E41CC47EA400B81F7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EE642F1CC5DD3B009267B5 /* BSMeetingInvikeController.m in Sources */,
 				E2E8E9DE1CC47EA400B81F7C /* AppDelegate.m in Sources */,
 				E2E8EA0E1CC47F1500B81F7C /* BSVideoMeetingController.m in Sources */,
 				E2E8EA141CC4D18C00B81F7C /* TimeView.m in Sources */,

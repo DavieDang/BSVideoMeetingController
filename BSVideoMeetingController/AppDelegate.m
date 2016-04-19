@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BSVideoMeetingController.h"
+#import "BSMeetingInvikeController.h"
 
 @interface AppDelegate ()
 
@@ -23,8 +23,8 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
     
-    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:[BSVideoMeetingController new]];
-    self.window.rootViewController = navc;
+   
+    self.window.rootViewController = [[BSMeetingInvikeController alloc]initWithNibName:@"BSMeetingInvikeController" bundle:nil];
     
     [self.window makeKeyAndVisible];
     
