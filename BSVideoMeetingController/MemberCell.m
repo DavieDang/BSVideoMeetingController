@@ -60,4 +60,24 @@
     return _JoinLb;
 }
 
+
+- (UIButton *)moveBtn{
+    if (!_moveBtn) {
+        _moveBtn = [UIButton buttonWithType:0];
+        _moveBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+        [_moveBtn setTitleColor:[UIColor whiteColor] forState:0];
+        _moveBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+        
+        [self.contentView addSubview:self.moveBtn];
+        [self.moveBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-10);
+            make.centerY.mas_equalTo(self);
+        }];
+        
+        
+    }
+    
+    return _moveBtn;
+}
+
 @end

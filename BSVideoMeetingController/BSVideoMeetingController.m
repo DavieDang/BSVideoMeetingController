@@ -12,6 +12,10 @@
 #import "TimeView.h"
 #import "VideoView.h"
 
+//#import "TimecountDown.h"
+
+#import "SelectTimeView.h"
+
 
 
 #define kWIDTH  [UIScreen mainScreen].bounds.size.width
@@ -20,8 +24,7 @@
 @interface BSVideoMeetingController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (assign) BOOL isOpen;
-@property (nonatomic,strong) TimeView *timeView;
-
+//@property (nonatomic,strong) TimeView *timeView;
 @property (nonatomic,strong) VideoView *videoView;
 
 
@@ -29,12 +32,22 @@
 @property (nonatomic,strong) UIPickerView *pickerView;
 
 
-//测试成员是否加入视频会议
+//成员是否加入视频会议
 @property (assign) BOOL isJoin;
 
 //延长的时间的数组
 
 @property (nonatomic,strong) NSMutableArray *timeArr;
+
+
+//显示不同的TimeView的类
+@property (nonatomic,strong) SelectTimeView *selectView;
+
+
+//设置一个开关-----转移主持人时弹出来的Cell中Label变Button
+
+@property (nonatomic,assign) BOOL isHasBtn;
+
  
 
 @end
@@ -42,25 +55,16 @@
 @implementation BSVideoMeetingController
 
 
-//时间的View
+//
 
-- (TimeView *)timeView{
-    if (!_timeView) {
-        _timeView = [[TimeView alloc]initWithFrame:CGRectZero];
-        [self.view addSubview:_timeView];
-        self.timeView.backgroundColor = [UIColor whiteColor];
-        [self.timeView.transferBtn addTarget:self action:@selector(transferEvent) forControlEvents:UIControlEventTouchUpInside];
-        [self.timeView.SilenceBtn addTarget:self action:@selector(silenceEvent) forControlEvents:UIControlEventTouchUpInside];;
-        [self.timeView.recordBtn addTarget:self action:@selector(recordEvent) forControlEvents:UIControlEventTouchUpInside];;
+- (SelectTimeView *)selectView{
+    if (!_selectView) {
+        _selectView = [SelectTimeView new];
         
-        [self.timeView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.topMargin.mas_equalTo(64);
-            make.left.right.mas_equalTo(0);
-            make.height.mas_equalTo(160);
-        }];
     }
-    return _timeView;
+    return _selectView;
 }
+
 
 
 
@@ -74,7 +78,7 @@
         
         self.videoView.backgroundColor = [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1.0];
         [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.timeView.mas_bottom).mas_offset(0);
+            make.top.mas_equalTo(224);
             make.left.mas_equalTo(0);
             make.right.mas_equalTo(0);
             make.bottom.mas_equalTo(-55);
@@ -89,7 +93,7 @@
         _tableView = [UITableView new];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _timeView.hidden = NO;
+      
         
         [self.view addSubview:_tableView];
         [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -150,15 +154,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.selectView showTimeView:timeViewType ToVC:self completionHandle:nil];
+    
+    
+    //添加按钮的点击事件
+    [self.selectView.timeView.extendBtn addTarget:self action:@selector(extendMeet) forControlEvents:UIControlEventTouchUpInside];
+    [self.selectView.timeView.endBtn addTarget:self action:@selector(endMeet) forControlEvents:UIControlEventTouchUpInside];
+    [self.selectView.timeView.transferBtn addTarget:self action:@selector(transferEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.selectView.timeView.SilenceBtn addTarget:self action:@selector(silenceEvent:) forControlEvents:UIControlEventTouchUpInside];;
+    [self.selectView.timeView.recordBtn addTarget:self action:@selector(recordEvent:) forControlEvents:UIControlEventTouchUpInside];;
+    [self.selectView.otherView.endBtn addTarget:self action:@selector(endMeet) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+ 
+    
+
+    //是否打开成员列表
     self.isOpen = NO;
-    self.timeView.leftTime.hidden = NO;
-    self.videoView.hidden = NO;
-    [self.timeView.extendBtn addTarget:self action:@selector(extendMeet) forControlEvents:UIControlEventTouchUpInside];
-    [self.timeView.endBtn addTarget:self action:@selector(endMeet) forControlEvents:UIControlEventTouchUpInside];
+   self.videoView.hidden = NO;
+
     
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     
     
     /**
@@ -171,6 +188,12 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:14/255.0 green:141/255.0 blue:235/255.0 alpha:1];
     
     
+    /**
+     *  测试代码建立倒计时
+   
+     */
+    
+       [self startTime:10];
 
 }
 
@@ -186,21 +209,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     MemberCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    
-    
-    //成员姓名
-    cell.nameLb.text = @"成员姓名";
+        cell.nameLb.text = @"成员姓名";
         cell.backgroundColor = [UIColor colorWithRed:14/255.0 green:141/255.0 blue:235/255.0 alpha:1];
     
+    
+
+    
+    
+    
+    
     //是否加入视频会议的状态
+//    self.isJoin = YES;//设置一个默认值
+//    cell.JoinLb.text = self.isJoin ? @"已加入":@"待加入";
     
-     self.isJoin = YES;//设置一个默认值
-    cell.JoinLb.text = self.isJoin ? @"已加入":@"待加入";
-
+    if (self.isHasBtn == NO) {
+        cell.moveBtn.hidden = YES;
+        self.isJoin = YES;//设置一个默认值
+        cell.JoinLb.text = self.isJoin ? @"已加入":@"待加入";
+    }else{
+        
+        cell.JoinLb.hidden = YES;
+       [cell.moveBtn setTitle:@"转移主持人" forState:0];
+    }
     
-    
-
     
     return cell;
     
@@ -209,6 +240,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
+    
+    self.isHasBtn = NO;
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor colorWithRed:14/255.0 green:141/255.0 blue:235/255.0 alpha:1];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -233,20 +266,18 @@
 
 
 - (void)pushView{
+     [self.tableView reloadData];
     
     self.isOpen = !self.isOpen;
     if (self.isOpen == YES) {
-
-      
+        
         [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottomMargin.leftMargin.rightMargin.mas_equalTo(0);
             make.topMargin.mas_equalTo(64);
         }];
         
         [UIView animateWithDuration:0.5 animations:^{
-            
             [self.view layoutIfNeeded];
-            
         } completion:nil];
         
         [self.tableView reloadData];
@@ -265,18 +296,13 @@
         } completion:nil];
         
         [self.tableView reloadData];
-         self.timeView.hidden = NO;
-
+       
     }
     
   
     
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    return UITableViewAutomaticDimension;
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 37;
@@ -315,7 +341,10 @@
 //延长会议
 - (void)extendMeet{
     
-       self.pickerView.hidden = NO;
+    NSLog(@"延长会议.......");
+    self.pickerView.hidden = NO;
+   
+    
     
 }
 
@@ -328,15 +357,19 @@
 
 
 //转移主持人
-- (void)transferEvent{
+- (void)transferEvent:(UIButton *)sender{
     NSLog(@"转移主持人....");
+    self.isHasBtn = YES;
+    [self.tableView reloadData];
+    [self pushView];
+    
 }
 
 
 //会议录音
 
-- (void)recordEvent{
-    
+- (void)recordEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
     NSLog(@"会议录音....");
 }
 
@@ -344,8 +377,8 @@
 
 //全场静音
 
-- (void)silenceEvent{
-    
+- (void)silenceEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
     NSLog(@"全场静音.....");
 }
 
@@ -383,6 +416,43 @@
 }
 
 
+#pragma mark ---- 建立倒计时
+
+/**
+ *  会议倒计时的时间
+ *
+ *  @param countTime 倒计时的时间是多少秒钟
+ */
+
+-(void)startTime:(NSInteger)countTime{
+    
+    __block int timeDown = (int)countTime;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeDown < 0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+            });
+        }else{
+            
+            int seconds = timeDown % 60;
+            int minute = timeDown / 60;
+            int hour = timeDown / 3600;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                self.selectView.timeView.DownLb.text = [NSString stringWithFormat:@"%.2d : %.2d : %.2d",hour,minute,seconds];
+            });
+            timeDown--;
+            
+        }
+    });
+    dispatch_resume(_timer);
+    
+}
 
 
 

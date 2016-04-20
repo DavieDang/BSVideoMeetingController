@@ -34,6 +34,15 @@
 @property (nonatomic,strong) UIView *line3;
 
 
+//倒计时的时间
+
+@property (nonatomic,strong) UILabel *DownLb;
+
+//距离会议结束还有
+
+@property (nonatomic,strong) UILabel *leftTiltle;
+
+
 
 
 

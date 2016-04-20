@@ -21,5 +21,11 @@
 @property (nonatomic,strong) UILabel *JoinLb;
 
 
+/**
+ *  转移主持人出现的TalbeVeiw编辑按钮
+ */
+
+@property (nonatomic,strong) UIButton *moveBtn;
+
 
 @end

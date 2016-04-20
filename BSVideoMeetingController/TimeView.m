@@ -22,6 +22,14 @@
         self.line1.hidden = NO;
         self.line2.hidden = NO;
         self.line3.hidden = NO;
+        self.extendBtn.hidden = NO;
+        self.leftTime.hidden = NO;
+        self.endBtn.hidden = NO;
+        self.transferBtn.hidden = NO;
+        self.recordBtn.hidden = NO;
+        self.SilenceBtn.hidden = NO;
+        self.leftTiltle.hidden = NO;
+        self.DownLb.hidden = NO;
     }
     return self;
 }
@@ -36,9 +44,62 @@
             make.top.mas_equalTo(0);
             make.size.mas_equalTo(CGSizeMake(220, 120));
         }];
+        
+
+        
+        
     }
     return _leftTime;
 }
+
+
+//
+
+- (UILabel *)leftTiltle{
+    if (!_leftTiltle) {
+        
+        _leftTiltle = [UILabel new];
+        _leftTiltle.text = @"距会议结束还有";
+          _leftTiltle.textColor = [UIColor colorWithRed:110.0/255 green:110.0/255 blue:110.0/255 alpha:1.0];
+        _leftTiltle.font = [UIFont systemFontOfSize:15];
+        [self.leftTime addSubview:self.leftTiltle];
+        [self.leftTiltle mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(20);
+            make.left.mas_equalTo(15);
+            make.size.mas_equalTo(CGSizeMake(150, 20));
+            
+        }];
+    }
+    
+    return _leftTiltle;
+}
+
+
+//倒计时
+-(UILabel *)DownLb{
+    if (!_DownLb) {
+        _DownLb = [UILabel new];
+        _DownLb.font = [UIFont systemFontOfSize:30];
+        
+        //字符串拼接显示
+        _DownLb.text = @"00 : 00 : 00";
+        
+        _DownLb.textColor = [UIColor colorWithRed:31.0/255 green:148.0/255 blue:234.0/255 alpha:1.0];
+        [self.leftTime addSubview:self.DownLb];
+        [self.DownLb mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.leftTiltle.mas_bottom).mas_offset(25);
+            make.left.mas_equalTo(32);
+            make.right.mas_equalTo(-25);
+            make.bottom.mas_equalTo(-30);
+            
+        }];
+        
+        
+        
+    }
+    return _DownLb;
+}
+
 
 //延长会议
 - (UIButton *)extendBtn{
@@ -141,7 +202,7 @@
         
         [_transferBtn setTitle:@"转移主持人" forState:UIControlStateNormal];
         [_transferBtn setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [_transferBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateHighlighted];
+        [_transferBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateSelected];
         [_transferBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 100)];
         [_transferBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 20, 10, 30)];
         
@@ -168,8 +229,11 @@
         _recordBtn = [UIButton buttonWithType:0];
         
         [_recordBtn setTitle:@"会议录音" forState:UIControlStateNormal];
+        [_recordBtn setTitle:@"取消录音" forState:UIControlStateSelected];
+        
+       
         [_recordBtn setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [_recordBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateHighlighted];
+        [_recordBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateSelected];
         [_recordBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 100)];
         [_recordBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 20, 10, 30)];
         
@@ -197,9 +261,10 @@
         _SilenceBtn = [UIButton buttonWithType:0];
         
         [_SilenceBtn setTitle:@"全场静音" forState:UIControlStateNormal];
+        [_SilenceBtn setTitle:@"取消静音" forState:UIControlStateSelected];
      
         [_SilenceBtn setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [_SilenceBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateHighlighted];
+        [_SilenceBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateSelected];
         [_SilenceBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 90)];
         [_SilenceBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 20, 10, 25)];
         _SilenceBtn.titleLabel.font = [UIFont systemFontOfSize:13];

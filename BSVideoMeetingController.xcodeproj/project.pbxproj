@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0657621CB396375012AC0D41 /* libPods-BSVideoMeetingController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */; };
+		E21557251CC71A8E00F1EDFA /* OtherTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21557241CC71A8E00F1EDFA /* OtherTimeView.m */; };
+		E21557281CC7278800F1EDFA /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21557271CC7278800F1EDFA /* SelectTimeView.m */; };
+		E215572B1CC7638E00F1EDFA /* TimecountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = E215572A1CC7638E00F1EDFA /* TimecountDown.m */; };
 		E2C82A181CC6390A00F598FA /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C82A171CC6390A00F598FA /* down.png */; };
 		E2C82A1A1CC63D6300F598FA /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C82A191CC63D6300F598FA /* up.png */; };
 		E2E8E9DB1CC47EA400B81F7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8E9DA1CC47EA400B81F7C /* main.m */; };
@@ -46,8 +49,14 @@
 		73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSVideoMeetingController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C871C6F1C5E368D677110 /* Pods-BSVideoMeetingController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController.debug.xcconfig"; sourceTree = "<group>"; };
 		B5437B76AF5F8C2E0C81A829 /* Pods-BSVideoMeetingController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingController.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController.release.xcconfig"; sourceTree = "<group>"; };
-		E2C82A171CC6390A00F598FA /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
-		E2C82A191CC63D6300F598FA /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		E21557231CC71A8E00F1EDFA /* OtherTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTimeView.h; sourceTree = "<group>"; };
+		E21557241CC71A8E00F1EDFA /* OtherTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTimeView.m; sourceTree = "<group>"; };
+		E21557261CC7278800F1EDFA /* SelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectTimeView.h; path = ../SelectTimeView.h; sourceTree = "<group>"; };
+		E21557271CC7278800F1EDFA /* SelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectTimeView.m; path = ../SelectTimeView.m; sourceTree = "<group>"; };
+		E21557291CC7638E00F1EDFA /* TimecountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimecountDown.h; path = ../TimecountDown.h; sourceTree = "<group>"; };
+		E215572A1CC7638E00F1EDFA /* TimecountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimecountDown.m; path = ../TimecountDown.m; sourceTree = "<group>"; };
+		E2C82A171CC6390A00F598FA /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = ../down.png; sourceTree = "<group>"; };
+		E2C82A191CC63D6300F598FA /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = ../up.png; sourceTree = "<group>"; };
 		E2E8E9D61CC47EA400B81F7C /* BSVideoMeetingController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSVideoMeetingController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E8E9DA1CC47EA400B81F7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2E8E9DC1CC47EA400B81F7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,17 +71,17 @@
 		E2E8E9FA1CC47EA400B81F7C /* BSVideoMeetingControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSVideoMeetingControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E8E9FE1CC47EA400B81F7C /* BSVideoMeetingControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSVideoMeetingControllerUITests.m; sourceTree = "<group>"; };
 		E2E8EA001CC47EA400B81F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2E8EA0C1CC47F1500B81F7C /* BSVideoMeetingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVideoMeetingController.h; sourceTree = "<group>"; };
-		E2E8EA0D1CC47F1500B81F7C /* BSVideoMeetingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVideoMeetingController.m; sourceTree = "<group>"; };
-		E2E8EA0F1CC4825800B81F7C /* MemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberCell.h; sourceTree = "<group>"; };
-		E2E8EA101CC4825800B81F7C /* MemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCell.m; sourceTree = "<group>"; };
-		E2E8EA121CC4D18B00B81F7C /* TimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeView.h; sourceTree = "<group>"; };
-		E2E8EA131CC4D18C00B81F7C /* TimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeView.m; sourceTree = "<group>"; };
-		E2E8EA151CC4E14500B81F7C /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoView.h; sourceTree = "<group>"; };
-		E2E8EA161CC4E14500B81F7C /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoView.m; sourceTree = "<group>"; };
-		E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMeetingInvikeController.h; sourceTree = "<group>"; };
-		E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMeetingInvikeController.m; sourceTree = "<group>"; };
-		E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMeetingInvikeController.xib; sourceTree = "<group>"; };
+		E2E8EA0C1CC47F1500B81F7C /* BSVideoMeetingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSVideoMeetingController.h; path = ../BSVideoMeetingController.h; sourceTree = "<group>"; };
+		E2E8EA0D1CC47F1500B81F7C /* BSVideoMeetingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSVideoMeetingController.m; path = ../BSVideoMeetingController.m; sourceTree = "<group>"; };
+		E2E8EA0F1CC4825800B81F7C /* MemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemberCell.h; path = ../MemberCell.h; sourceTree = "<group>"; };
+		E2E8EA101CC4825800B81F7C /* MemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemberCell.m; path = ../MemberCell.m; sourceTree = "<group>"; };
+		E2E8EA121CC4D18B00B81F7C /* TimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeView.h; path = ../TimeView.h; sourceTree = "<group>"; };
+		E2E8EA131CC4D18C00B81F7C /* TimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeView.m; path = ../TimeView.m; sourceTree = "<group>"; };
+		E2E8EA151CC4E14500B81F7C /* VideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoView.h; path = ../VideoView.h; sourceTree = "<group>"; };
+		E2E8EA161CC4E14500B81F7C /* VideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoView.m; path = ../VideoView.m; sourceTree = "<group>"; };
+		E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSMeetingInvikeController.h; path = "../通知界面/BSMeetingInvikeController.h"; sourceTree = "<group>"; };
+		E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSMeetingInvikeController.m; path = "../通知界面/BSMeetingInvikeController.m"; sourceTree = "<group>"; };
+		E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSMeetingInvikeController.xib; path = "../通知界面/BSMeetingInvikeController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +127,54 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E21557201CC716D900F1EDFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */,
+				E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */,
+				E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */,
+				E2E8EA0C1CC47F1500B81F7C /* BSVideoMeetingController.h */,
+				E2E8EA0D1CC47F1500B81F7C /* BSVideoMeetingController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E21557211CC716EA00F1EDFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E215576B1CC774AD00F1EDFA /* 自定义的类 */,
+				E2E8EA121CC4D18B00B81F7C /* TimeView.h */,
+				E2E8EA131CC4D18C00B81F7C /* TimeView.m */,
+				E2E8EA151CC4E14500B81F7C /* VideoView.h */,
+				E2E8EA161CC4E14500B81F7C /* VideoView.m */,
+				E2E8EA0F1CC4825800B81F7C /* MemberCell.h */,
+				E2E8EA101CC4825800B81F7C /* MemberCell.m */,
+				E21557231CC71A8E00F1EDFA /* OtherTimeView.h */,
+				E21557241CC71A8E00F1EDFA /* OtherTimeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E21557221CC7175200F1EDFA /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				E2C82A191CC63D6300F598FA /* up.png */,
+				E2C82A171CC6390A00F598FA /* down.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		E215576B1CC774AD00F1EDFA /* 自定义的类 */ = {
+			isa = PBXGroup;
+			children = (
+				E21557291CC7638E00F1EDFA /* TimecountDown.h */,
+				E215572A1CC7638E00F1EDFA /* TimecountDown.m */,
+				E21557261CC7278800F1EDFA /* SelectTimeView.h */,
+				E21557271CC7278800F1EDFA /* SelectTimeView.m */,
+			);
+			path = "自定义的类";
+			sourceTree = "<group>";
+		};
 		E2E8E9CD1CC47EA200B81F7C = {
 			isa = PBXGroup;
 			children = (
@@ -143,19 +200,11 @@
 		E2E8E9D81CC47EA400B81F7C /* BSVideoMeetingController */ = {
 			isa = PBXGroup;
 			children = (
-				E2C82A191CC63D6300F598FA /* up.png */,
-				E2C82A171CC6390A00F598FA /* down.png */,
-				E2EE642B1CC5DCE6009267B5 /* 通知界面 */,
+				E21557221CC7175200F1EDFA /* resource */,
+				E21557211CC716EA00F1EDFA /* View */,
+				E21557201CC716D900F1EDFA /* Controller */,
 				E2E8E9DC1CC47EA400B81F7C /* AppDelegate.h */,
 				E2E8E9DD1CC47EA400B81F7C /* AppDelegate.m */,
-				E2E8EA121CC4D18B00B81F7C /* TimeView.h */,
-				E2E8EA131CC4D18C00B81F7C /* TimeView.m */,
-				E2E8EA151CC4E14500B81F7C /* VideoView.h */,
-				E2E8EA161CC4E14500B81F7C /* VideoView.m */,
-				E2E8EA0F1CC4825800B81F7C /* MemberCell.h */,
-				E2E8EA101CC4825800B81F7C /* MemberCell.m */,
-				E2E8EA0C1CC47F1500B81F7C /* BSVideoMeetingController.h */,
-				E2E8EA0D1CC47F1500B81F7C /* BSVideoMeetingController.m */,
 				E2E8E9E21CC47EA400B81F7C /* Main.storyboard */,
 				E2E8E9E51CC47EA400B81F7C /* Assets.xcassets */,
 				E2E8E9E71CC47EA400B81F7C /* LaunchScreen.storyboard */,
@@ -189,16 +238,6 @@
 				E2E8EA001CC47EA400B81F7C /* Info.plist */,
 			);
 			path = BSVideoMeetingControllerUITests;
-			sourceTree = "<group>";
-		};
-		E2EE642B1CC5DCE6009267B5 /* 通知界面 */ = {
-			isa = PBXGroup;
-			children = (
-				E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */,
-				E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */,
-				E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */,
-			);
-			path = "通知界面";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,9 +428,12 @@
 				E2E8E9DE1CC47EA400B81F7C /* AppDelegate.m in Sources */,
 				E2E8EA0E1CC47F1500B81F7C /* BSVideoMeetingController.m in Sources */,
 				E2E8EA141CC4D18C00B81F7C /* TimeView.m in Sources */,
+				E215572B1CC7638E00F1EDFA /* TimecountDown.m in Sources */,
 				E2E8E9DB1CC47EA400B81F7C /* main.m in Sources */,
 				E2E8EA171CC4E14500B81F7C /* VideoView.m in Sources */,
+				E21557251CC71A8E00F1EDFA /* OtherTimeView.m in Sources */,
 				E2E8EA111CC4825800B81F7C /* MemberCell.m in Sources */,
+				E21557281CC7278800F1EDFA /* SelectTimeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
