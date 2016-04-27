@@ -105,14 +105,25 @@
 - (UIButton *)extendBtn{
     if (!_extendBtn) {
         _extendBtn  = [UIButton buttonWithType:0];
+      
+        _extendBtn.layer.borderColor = [[UIColor colorWithRed:84.0/255 green:207.0/255 blue:205.0/255 alpha:1.0] CGColor];
+        _extendBtn.layer.borderWidth = 1.0f;
+        _extendBtn.layer.cornerRadius = 5.0f;
+        _extendBtn.layer.masksToBounds = YES;
+        
+   
         [_extendBtn setTitle:@"延长会议" forState:0];
+        _extendBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [_extendBtn setTitleColor:[UIColor colorWithRed:84.0/255 green:207.0/255 blue:205.0/255 alpha:1.0] forState:UIControlStateNormal];
+        [_extendBtn setImage:[UIImage imageNamed:@"时间"] forState:UIControlStateNormal];
+        [_extendBtn setImageEdgeInsets:UIEdgeInsetsMake(5,5,5,80)];
+        [_extendBtn setTitleEdgeInsets:UIEdgeInsetsMake(5,0,0,5)];
         [self addSubview:_extendBtn];
         [self.extendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.left.mas_equalTo(self.leftTime.mas_right).mas_offset(46/2);
-            make.top.mas_equalTo(37/2);
-            make.right.mas_equalTo(-7);
+            make.left.mas_equalTo(self.leftTime.mas_right).mas_offset(20);
+            make.top.mas_equalTo(19);
+            make.right.mas_equalTo(-10);
             make.height.mas_equalTo(35);
             
         }];  
@@ -125,6 +136,16 @@
     if (!_endBtn) {
         _endBtn = [UIButton buttonWithType:0];
         [_endBtn setTitle:@"退出会议" forState:0];
+        
+        _endBtn.layer.borderColor = [[UIColor redColor] CGColor];
+        _endBtn.layer.borderWidth = 1.0f;
+        _endBtn.layer.cornerRadius = 5.0f;
+        _endBtn.layer.masksToBounds = YES;
+        
+        _endBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [_endBtn setImage:[UIImage imageNamed:@"tel"] forState:UIControlStateNormal];
+        [_endBtn setImageEdgeInsets:UIEdgeInsetsMake(5,5,8,80)];
+        [_endBtn setTitleEdgeInsets:UIEdgeInsetsMake(5,0,0,5)];
 
          [_endBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [self addSubview:_endBtn];
@@ -201,10 +222,10 @@
         _transferBtn = [UIButton buttonWithType:0];
         
         [_transferBtn setTitle:@"转移主持人" forState:UIControlStateNormal];
-        [_transferBtn setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [_transferBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateSelected];
-        [_transferBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 100)];
-        [_transferBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 20, 10, 30)];
+        [_transferBtn setImage:[UIImage imageNamed:@"iconfont-jiudianwuxianhuatong32px"] forState:UIControlStateNormal];
+        [_transferBtn setImage:[UIImage imageNamed:@"iconfont-jiudianwuxianhuatong32px"] forState:UIControlStateSelected];
+        [_transferBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 110)];
+        [_transferBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 0, 10, 30)];
         
         _transferBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [_transferBtn setTitleColor:[UIColor colorWithRed:86.0/255 green:86.0/255 blue:86.0/255 alpha:1] forState:UIControlStateNormal];
@@ -228,14 +249,26 @@
     if (!_recordBtn) {
         _recordBtn = [UIButton buttonWithType:0];
         
+        
+        
+        
+        [_recordBtn setImage:[UIImage imageNamed:@"iconfont-luyin"] forState:UIControlStateNormal];
+        [_recordBtn setImage:[UIImage imageNamed:@"录音"] forState:UIControlStateSelected];
         [_recordBtn setTitle:@"会议录音" forState:UIControlStateNormal];
         [_recordBtn setTitle:@"取消录音" forState:UIControlStateSelected];
         
+        
+        [_recordBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 15, 10, 90)];
+        [_recordBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 0, 10, 20)];
+        
+        
        
-        [_recordBtn setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [_recordBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateSelected];
-        [_recordBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 100)];
-        [_recordBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 20, 10, 30)];
+        
+    //    _recordBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+        
+        
+
+        
         
         _recordBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [_recordBtn setTitleColor:[UIColor colorWithRed:86.0/255 green:86.0/255 blue:86.0/255 alpha:1] forState:UIControlStateNormal];
@@ -246,7 +279,7 @@
             make.left.mas_equalTo(self.line2.mas_right);
             make.top.mas_equalTo(self.line1.mas_bottom).mas_offset(0);
             make.bottom.mas_equalTo(0);
-            make.rightMargin.mas_equalTo(self.line3.mas_leftMargin);
+            make.right.mas_equalTo(self.line3.mas_right);
         }];
     
     
@@ -263,10 +296,10 @@
         [_SilenceBtn setTitle:@"全场静音" forState:UIControlStateNormal];
         [_SilenceBtn setTitle:@"取消静音" forState:UIControlStateSelected];
      
-        [_SilenceBtn setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [_SilenceBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateSelected];
-        [_SilenceBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 90)];
-        [_SilenceBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 20, 10, 25)];
+        [_SilenceBtn setImage:[UIImage imageNamed:@"话筒"] forState:UIControlStateNormal];
+        [_SilenceBtn setImage:[UIImage imageNamed:@"静音"] forState:UIControlStateSelected];
+        [_SilenceBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 15, 10, 100)];
+        [_SilenceBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 0, 10, 25)];
         _SilenceBtn.titleLabel.font = [UIFont systemFontOfSize:13];
 
         [_SilenceBtn setTitleColor:[UIColor colorWithRed:86.0/255 green:86.0/255 blue:86.0/255 alpha:1] forState:UIControlStateNormal];

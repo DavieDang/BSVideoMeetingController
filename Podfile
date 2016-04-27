@@ -5,12 +5,14 @@
 
 target 'BSVideoMeetingController' do
 pod 'Masonry'
+pod 'SDWebImage'
 
 end
 
-target 'BSVideoMeetingControllerTests' do
+#target 'BSVideoMeetingControllerTests' do
+#pod 'SDWebImage'
 
-end
+#end
 
 target 'BSVideoMeetingControllerUITests' do
 

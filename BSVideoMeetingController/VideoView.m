@@ -7,11 +7,17 @@
 //
 
 #import "VideoView.h"
+#import <SDWebImage/UIImage+GIF.h>
+#import <Masonry.h>
+
 
 @implementation VideoView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        
+
+        
     }
     return self;
 }

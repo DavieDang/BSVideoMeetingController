@@ -9,6 +9,7 @@
 #import "BSVideoMeetingController.h"
 #import "MemberCell.h"
 #import <Masonry.h>
+#import <SDWebImage/UIImage+GIF.h>
 #import "TimeView.h"
 #import "VideoView.h"
 
@@ -76,16 +77,36 @@
         
         [self.view addSubview:_videoView];
         
-        self.videoView.backgroundColor = [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1.0];
+       // self.videoView.backgroundColor = [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1.0];
+       
         [self.videoView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(224);
             make.left.mas_equalTo(0);
             make.right.mas_equalTo(0);
             make.bottom.mas_equalTo(-55);
         }];
+        
+        
+        UIImageView *imageView = [[UIImageView alloc]init];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        UIImage *image = [UIImage sd_animatedGIFWithData:data];
+        imageView.image = image;
+        [self.videoView addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(100, 20));
+            make.center.mas_equalTo(self.videoView);
+        }];
+        
+        
+
+        
     }
     return _videoView;
 }
+
+
+
 
 
 - (UITableView *)tableView{
@@ -193,7 +214,7 @@
    
      */
     
-       [self startTime:10];
+       [self startTime:120];
 
 }
 
@@ -201,7 +222,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
- 
+    /**
+     *  测试代码
+     */
+    
     return 25;
     
 }
@@ -224,11 +248,13 @@
     
     if (self.isHasBtn == NO) {
         cell.moveBtn.hidden = YES;
+        cell.JoinLb.hidden = NO;
         self.isJoin = YES;//设置一个默认值
         cell.JoinLb.text = self.isJoin ? @"已加入":@"待加入";
     }else{
         
         cell.JoinLb.hidden = YES;
+        cell.moveBtn.hidden = NO;
        [cell.moveBtn setTitle:@"转移主持人" forState:0];
     }
     
@@ -362,7 +388,7 @@
     self.isHasBtn = YES;
     [self.tableView reloadData];
     [self pushView];
-    
+   
 }
 
 
@@ -370,6 +396,11 @@
 
 - (void)recordEvent:(UIButton *)sender{
     sender.selected = !sender.selected;
+    
+    if (sender.selected) {
+//        [self.selectView.timeView.recordBtn setImageEdgeInsets:UIEdgeInsetsMake(12, 25, 10, 80)];
+//        [self.selectView.timeView.recordBtn setTitleEdgeInsets:UIEdgeInsetsMake(12, 3, 10, 25)];
+    }
     NSLog(@"会议录音....");
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0657621CB396375012AC0D41 /* libPods-BSVideoMeetingController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */; };
+		9D46754BBBDBE9F53CE84C65 /* libPods-BSVideoMeetingControllerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C0C10CEB8812F4BA7858B5 /* libPods-BSVideoMeetingControllerTests.a */; };
 		E21557251CC71A8E00F1EDFA /* OtherTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21557241CC71A8E00F1EDFA /* OtherTimeView.m */; };
 		E21557281CC7278800F1EDFA /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21557271CC7278800F1EDFA /* SelectTimeView.m */; };
 		E215572B1CC7638E00F1EDFA /* TimecountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = E215572A1CC7638E00F1EDFA /* TimecountDown.m */; };
@@ -26,6 +27,7 @@
 		E2E8EA171CC4E14500B81F7C /* VideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E8EA161CC4E14500B81F7C /* VideoView.m */; };
 		E2EE642F1CC5DD3B009267B5 /* BSMeetingInvikeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */; };
 		E2EE64301CC5DD3B009267B5 /* BSMeetingInvikeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */; };
+		E2F35D151CC8B4C6000DEA5F /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E2F35D141CC8B4C6000DEA5F /* loading.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CAAA15625CA5580DB35E538 /* Pods-BSVideoMeetingControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingControllerTests/Pods-BSVideoMeetingControllerTests.release.xcconfig"; sourceTree = "<group>"; };
+		32468487C995808F8DF8518B /* Pods-BSVideoMeetingControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingControllerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingControllerTests/Pods-BSVideoMeetingControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSVideoMeetingController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C0C10CEB8812F4BA7858B5 /* libPods-BSVideoMeetingControllerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSVideoMeetingControllerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C871C6F1C5E368D677110 /* Pods-BSVideoMeetingController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController.debug.xcconfig"; sourceTree = "<group>"; };
 		B5437B76AF5F8C2E0C81A829 /* Pods-BSVideoMeetingController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSVideoMeetingController.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController.release.xcconfig"; sourceTree = "<group>"; };
 		E21557231CC71A8E00F1EDFA /* OtherTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTimeView.h; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		E2EE642C1CC5DD3B009267B5 /* BSMeetingInvikeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSMeetingInvikeController.h; path = "../通知界面/BSMeetingInvikeController.h"; sourceTree = "<group>"; };
 		E2EE642D1CC5DD3B009267B5 /* BSMeetingInvikeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSMeetingInvikeController.m; path = "../通知界面/BSMeetingInvikeController.m"; sourceTree = "<group>"; };
 		E2EE642E1CC5DD3B009267B5 /* BSMeetingInvikeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BSMeetingInvikeController.xib; path = "../通知界面/BSMeetingInvikeController.xib"; sourceTree = "<group>"; };
+		E2F35D141CC8B4C6000DEA5F /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = loading.gif; path = ../loading.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D46754BBBDBE9F53CE84C65 /* libPods-BSVideoMeetingControllerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +122,8 @@
 			children = (
 				AE6C871C6F1C5E368D677110 /* Pods-BSVideoMeetingController.debug.xcconfig */,
 				B5437B76AF5F8C2E0C81A829 /* Pods-BSVideoMeetingController.release.xcconfig */,
+				32468487C995808F8DF8518B /* Pods-BSVideoMeetingControllerTests.debug.xcconfig */,
+				0CAAA15625CA5580DB35E538 /* Pods-BSVideoMeetingControllerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -123,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				73C423434029328A60C2BC00 /* libPods-BSVideoMeetingController.a */,
+				79C0C10CEB8812F4BA7858B5 /* libPods-BSVideoMeetingControllerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,6 +168,7 @@
 		E21557221CC7175200F1EDFA /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				E2F35D141CC8B4C6000DEA5F /* loading.gif */,
 				E2C82A191CC63D6300F598FA /* up.png */,
 				E2C82A171CC6390A00F598FA /* down.png */,
 			);
@@ -267,9 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2E8EA061CC47EA500B81F7C /* Build configuration list for PBXNativeTarget "BSVideoMeetingControllerTests" */;
 			buildPhases = (
+				114F27713FA4227C25459634 /* Check Pods Manifest.lock */,
 				E2E8E9EB1CC47EA400B81F7C /* Sources */,
 				E2E8E9EC1CC47EA400B81F7C /* Frameworks */,
 				E2E8E9ED1CC47EA400B81F7C /* Resources */,
+				DD3EF91B2FDA3477C168343D /* Embed Pods Frameworks */,
+				475E58E66615E4C287CE54A8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -347,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C82A1A1CC63D6300F598FA /* up.png in Resources */,
+				E2F35D151CC8B4C6000DEA5F /* loading.gif in Resources */,
 				E2E8E9E91CC47EA400B81F7C /* LaunchScreen.storyboard in Resources */,
 				E2C82A181CC6390A00F598FA /* down.png in Resources */,
 				E2E8E9E61CC47EA400B81F7C /* Assets.xcassets in Resources */,
@@ -372,6 +387,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		114F27713FA4227C25459634 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		475E58E66615E4C287CE54A8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSVideoMeetingControllerTests/Pods-BSVideoMeetingControllerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		54CAB3C1939B781D935A1093 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +445,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSVideoMeetingController/Pods-BSVideoMeetingController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD3EF91B2FDA3477C168343D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BSVideoMeetingControllerTests/Pods-BSVideoMeetingControllerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F37E0FC4A7848604F99E1048 /* Embed Pods Frameworks */ = {
@@ -594,6 +654,7 @@
 		};
 		E2E8EA071CC47EA500B81F7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32468487C995808F8DF8518B /* Pods-BSVideoMeetingControllerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BSVideoMeetingControllerTests/Info.plist;
@@ -606,6 +667,7 @@
 		};
 		E2E8EA081CC47EA500B81F7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CAAA15625CA5580DB35E538 /* Pods-BSVideoMeetingControllerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BSVideoMeetingControllerTests/Info.plist;

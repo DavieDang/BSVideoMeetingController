@@ -27,10 +27,10 @@
     self.headView.layer.cornerRadius = 5.0f;
     self.headView.layer.masksToBounds = YES;
     
-    self.acceptBtn.layer.cornerRadius = 37.5f;
+    self.acceptBtn.layer.cornerRadius = 35.0f;
     self.acceptBtn.layer.masksToBounds = YES;
     
-    self.refuseBtn.layer.cornerRadius = 37.5f;
+    self.refuseBtn.layer.cornerRadius = 35.0f;
     self.refuseBtn.layer.masksToBounds = YES;
     
     //发起邀请的人
@@ -45,8 +45,15 @@
     
     //self.headView.image = [UIImage imageNamed:@""];
     
-    //self.refuseBtn setImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>
-   // self.acceptBtn setImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>
+    
+//    UIImage *reimage = [UIImage imageNamed:@"reject"];
+//    [reimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    
+//    UIImage *acimage = [UIImage imageNamed:@"accept"];
+//    [reimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    
+//    [self.refuseBtn setImage:reimage forState:0];
+//    [self.acceptBtn setImage:acimage forState:0];
     
    
 }
